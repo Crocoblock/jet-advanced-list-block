@@ -1,0 +1,54 @@
+{
+	"name": "jet-blocks/advanced-list",
+	"title": "Advanced List",
+	"icon": "list-view",
+	"category": "widgets",
+	"keywords": [ "list", "pricing", "definition list" ],
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 1
+		},
+		"layout": {
+			"type": "string",
+			"default": "horizontal-start"
+		},
+		"icon_type": {
+			"type": "string",
+			"default": "raw"
+		},
+		"icon_src": {
+			"type": "string",
+			"default": ""
+		},
+		"icon_id": {
+			"type": "number",
+			"default": null
+		},
+		"icon_size": {
+			"type": "number",
+			"default": 24
+		},
+		"icon_color": {
+			"type": "string",
+			"default": ""
+		},
+		"icon_gap_before": {
+			"type": "number"
+		},
+		"icon_gap_after": {
+			"type": "number"
+		}
+	},
+	"providesContext": {
+		"jet-blocks/advanced-list/layout": "layout",
+		"jet-blocks/advanced-list/icon_src": "icon_src",
+		"jet-blocks/advanced-list/icon_size": "icon_size",
+		"jet-blocks/advanced-list/icon_color": "icon_color",
+		"jet-blocks/advanced-list/icon_gap_before": "icon_gap_before",
+		"jet-blocks/advanced-list/icon_gap_after": "icon_gap_after"
+	},
+	"editorScript": "jet-advanced-list-block-editor",
+	"editorStyle": "jet-advanced-list-block-editor",
+	"style": "jet-advanced-list-block"
+}

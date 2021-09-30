@@ -1,0 +1,83 @@
+svg.jet-advanced-list-item-block__icon {
+	fill: currentColor;
+}
+
+.jet-advanced-list-block {
+	> .block-editor-inner-blocks {
+		flex: 0 0 100%;
+		max-width: 100%;
+		> .block-editor-block-list__layout {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			justify-content: flex-start;
+			> .wp-block {
+				margin: 0;
+			}
+			> .block-list-appender {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+	&--columns-1 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+	&--columns-2 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
+			flex: 0 0 calc(50% - 10px);
+			max-width: calc(50% - 10px);
+		}
+	}
+	&--columns-3 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
+			flex: 0 0 calc(33.3333% - 13.4px);
+			max-width: calc(33.3333% - 13.4px);
+		}
+	}
+	&--columns-4 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+	}
+	&--columns-5 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
+			flex: 0 0 20%;
+			max-width: 20%;
+		}
+	}
+	&--columns-6 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
+			flex: 0 0 16.6666%;
+			max-width: 16.6666%;
+		}
+	}
+	&--columns-7 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
+			flex: 0 0 14.2857%;
+			max-width: 14.2857%;
+		}
+	}
+	&--columns-8 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
+			flex: 12.5%;
+			max-width: 12.5%;
+		}
+	}
+	&--columns-9 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
+			flex: 0 0 11.1111%;
+			max-width: 11.1111%;
+		}
+	}
+	&--columns-10 {
+		> .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
+			flex: 0 0 10%;
+			max-width: 10%;
+		}
+	}
+}
