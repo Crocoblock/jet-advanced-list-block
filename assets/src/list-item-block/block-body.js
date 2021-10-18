@@ -57,18 +57,11 @@ const BlockBody = function( props ) {
 			} }
 		/> }
 		<div className={ baseClass + '__content' }>
+			{ attributes.item_label && <div
+				className={ baseClass + '__title' }
+				dangerouslySetInnerHTML={ { __html: attributes.item_label } }
+			/> }
 			{ isEdit && <Fragment>
-				<RichText
-					tagName="div"
-					className={ baseClass + '__title' }
-					placeholder={ __( 'List item label', 'jet-advanced-list-block' ) }
-					onChange={ ( value ) => {
-						setAttributes( {
-							item_label: value
-						} );
-					} }
-					value={ attributes.item_label }
-				/>
 				<RichText
 					tagName="div"
 					className={ baseClass + '__data' }
@@ -82,11 +75,6 @@ const BlockBody = function( props ) {
 				/>
 			</Fragment> }
 			{ ! isEdit && <Fragment>
-				<RichText.Content
-					tagName="div"
-					className={ baseClass + '__title' }
-					value={ attributes.item_label }
-				/>
 				<RichText.Content
 					tagName="div"
 					className={ baseClass + '__data' }

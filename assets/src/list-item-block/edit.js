@@ -43,6 +43,16 @@ const Edit = function( props ) {
 				<PanelBody
 					title={ __( 'General', 'jet-advanced-list-block' ) }
 				>
+					<TextControl
+						label={ __( 'Item Label', 'jet-advanced-list-block' ) }
+						help={ __( 'Label which will be shown before main item content', 'jet-advanced-list-block' ) }
+						value={ attributes.item_label }
+						onChange={ ( value ) => {
+							props.setAttributes( {
+								item_label: value
+							} )
+						} }
+					/>
 				</PanelBody>
 				<PanelBody
 					title={ __( 'Icon', 'jet-advanced-list-block' ) }

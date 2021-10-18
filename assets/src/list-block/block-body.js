@@ -23,6 +23,10 @@ const BlockBody = function( props ) {
 	classList.push( baseClass + '--columns-' + attributes.columns );
 
 	blockProps.className = classList.join( ' ' );
+	blockProps.style = {
+		rowGap: attributes.row_gap,
+		columnGap: attributes.column_gap
+	}
 
 	return <div { ...blockProps }>
 			{ isEdit && <InnerBlocks

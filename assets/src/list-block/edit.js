@@ -2,18 +2,14 @@ import BlockBody from './block-body';
 import IconVertical from './icons/vertical';
 import IconHorizontalStart from './icons/horizontal-start';
 import IconHorizontalBetween from './icons/horizontal-between';
+import IconEditorBold from './icons/editor-bold';
+import IconEditorItalic from './icons/editor-italic';
 import IconControl from '../common/icon-control';
-
-const {
-	InspectorControls,
-	ColorPalette
-} = wp.blockEditor;
 
 const { __ } = wp.i18n;
 
 const {
 	RangeControl,
-	TextControl,
 	ToggleControl,
 	ToolbarGroup,
 	ToolbarButton,
@@ -23,7 +19,9 @@ const {
 
 const {
 	BlockControls,
-	useBlockProps
+	useBlockProps,
+	InspectorControls,
+	ColorPalette
 } = wp.blockEditor;
 
 const {
@@ -112,15 +110,150 @@ const Edit = function( props ) {
 							} )
 						} }
 					/>
+					{ ( 1 < attributes.columns ) && <RangeControl
+						label={ __( 'Columns Gap', 'jet-advanced-list-block' ) }
+						help={ __( 'Space between list columns. Please note, due to editor HTML markup this options will be applied only on front-end.', 'jet-advanced-list-block' ) }
+						min="0"
+						max="40"
+						value={ attributes.column_gap }
+						onChange={ ( value ) => {
+							props.setAttributes( {
+								column_gap: value
+							} )
+						} }
+					/> }
+					<RangeControl
+						label={ __( 'Rows Gap', 'jet-advanced-list-block' ) }
+						help={ __( 'Space between list rows. Please note, due to editor HTML markup this options will be applied only on front-end.', 'jet-advanced-list-block' ) }
+						min="0"
+						max="40"
+						value={ attributes.row_gap }
+						onChange={ ( value ) => {
+							props.setAttributes( {
+								row_gap: value
+							} )
+						} }
+					/>
 				</PanelBody>
 				<PanelBody
 					title={ __( 'Icon', 'jet-advanced-list-block' ) }
+					initialOpen={ false }
 				>
 					<IconControl
 						attributes={ attributes }
 						onChange={ ( attr, value ) => {
 							setAttributes( {
 								[ attr ]: value
+							} );
+						} }
+					/>
+				</PanelBody>
+				<PanelBody
+					title={ __( 'Styles', 'jet-advanced-list-block' ) }
+				>
+					<p>
+						<strong>{ __( 'Item title', 'jet-advanced-list-block' ) }</strong>
+					</p>
+					<ToolbarGroup>
+						<ToolbarButton
+							icon={ IconEditorBold }
+							title="Bold"
+							isActive={ attributes.label_styles.font_bold }
+							onClick={ () => {
+
+								let isBold = attributes.label_styles.font_bold;
+
+								if ( isBold ) {
+									isBold = false;
+								} else {
+									isBold = true;
+								}
+
+								props.setAttributes( {
+									label_styles: _.assign( {}, attributes.label_styles, { font_bold: isBold } )
+								} );
+
+							} }
+						/>
+						<ToolbarButton
+							icon={ IconEditorItalic }
+							title="Italic"
+							isActive={ attributes.label_styles.font_italic }
+							onClick={ () => {
+
+								let isItalic = attributes.label_styles.font_italic;
+
+								if ( isItalic ) {
+									isItalic = false;
+								} else {
+									isItalic = true;
+								}
+
+								props.setAttributes( {
+									label_styles: _.assign( {}, attributes.label_styles, { font_italic: isItalic } )
+								} );
+
+							} }
+						/>
+					</ToolbarGroup>
+					<ColorPalette
+						value={ attributes.label_styles.color }
+						onChange={ ( value ) => {
+							props.setAttributes( {
+								label_styles: _.assign( {}, attributes.label_styles, { color: value } )
+							} );
+						} }
+					/>
+					<p>
+						<strong>{ __( 'Item content', 'jet-advanced-list-block' ) }</strong>
+					</p>
+					<ToolbarGroup>
+						<ToolbarButton
+							icon={ IconEditorBold }
+							title="Bold"
+							isActive={ attributes.content_styles.font_bold }
+							onClick={ () => {
+
+								let isBold = attributes.content_styles.font_bold;
+
+								if ( isBold ) {
+									isBold = false;
+								} else {
+									isBold = true;
+								}
+
+								props.setAttributes( {
+									content_styles: _.assign( {}, attributes.content_styles, { font_bold: isBold } )
+								} );
+
+							} }
+						/>
+						<ToolbarButton
+							icon={ IconEditorItalic }
+							title="Italic"
+							isActive={ attributes.content_styles.font_italic }
+							onClick={ () => {
+
+								let isItalic = attributes.content_styles.font_italic;
+
+								if ( isItalic ) {
+									isItalic = false;
+								} else {
+									isItalic = true;
+								}
+
+								props.setAttributes( {
+									content_styles: _.assign( {}, attributes.content_styles, { font_italic: isItalic } )
+								} );
+
+							} }
+						/>
+					</ToolbarGroup>
+					<ColorPalette
+						value={ attributes.content_styles.color }
+						onChange={ ( value ) => {
+							props.setAttributes( {
+								content_styles: _.assign( {}, attributes.content_styles, { color: value } )
 							} );
 						} }
 					/>

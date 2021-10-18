@@ -9,6 +9,14 @@
 			"type": "number",
 			"default": 1
 		},
+		"row_gap": {
+			"type": "number",
+			"default": 10
+		},
+		"column_gap": {
+			"type": "number",
+			"default": 20
+		},
 		"layout": {
 			"type": "string",
 			"default": "horizontal-start"
@@ -38,6 +46,17 @@
 		},
 		"icon_gap_after": {
 			"type": "number"
+		},
+		"items_list": {
+			"type": "string"
+		},
+		"label_styles": {
+			"type": "object",
+			"default": {}
+		},
+		"content_styles": {
+			"type": "object",
+			"default": {}
 		}
 	},
 	"providesContext": {
@@ -46,7 +65,9 @@
 		"jet-blocks/advanced-list/icon_size": "icon_size",
 		"jet-blocks/advanced-list/icon_color": "icon_color",
 		"jet-blocks/advanced-list/icon_gap_before": "icon_gap_before",
-		"jet-blocks/advanced-list/icon_gap_after": "icon_gap_after"
+		"jet-blocks/advanced-list/icon_gap_after": "icon_gap_after",
+		"jet-blocks/advanced-list/label_styles": "label_styles",
+		"jet-blocks/advanced-list/content_styles": "content_styles"
 	},
 	"editorScript": "jet-advanced-list-block-editor",
 	"editorStyle": "jet-advanced-list-block-editor",
