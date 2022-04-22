@@ -36,6 +36,8 @@ const BlockBody = function( props ) {
 	let colWidthStr = "" + colWidth + "% - " + halfGap + "px";
 	let styles      = ".jet-advanced-list-block--columns-" + attributes.columns + "." + attributes.custom_css_class + ">.jet-advanced-list-item-block {-ms-flex: 0 0 calc(" + colWidthStr + ");flex: 0 0 calc(" + colWidthStr + ");max-width: calc(" + colWidthStr + ");}";
 
+	styles += "." + attributes.custom_css_class + " { column-gap:" + attributes.column_gap + "px;}";
+
 	return <div { ...blockProps }>
 		<style>{ styles }</style>
 		{ isEdit && <InnerBlocks
