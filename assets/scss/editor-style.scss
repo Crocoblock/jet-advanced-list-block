@@ -9,7 +9,7 @@ svg.jet-advanced-list-item-block__icon {
 		> .block-editor-block-list__layout {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 20px;
+			gap: 0 ! important;
 			justify-content: flex-start;
 			> .wp-block {
 				margin: 0;

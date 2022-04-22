@@ -57,6 +57,10 @@
 		"content_styles": {
 			"type": "object",
 			"default": {}
+		},
+		"custom_css_class": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"providesContext": {
